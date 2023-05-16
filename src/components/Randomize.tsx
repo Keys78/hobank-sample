@@ -1,32 +1,45 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { questions } from '../utils/data';
 
-const questions: string[] = [
-    'Write A - Z', 
-    'Eat Bread and Egg',
-    'visit mosw',
-    'drp fan ',
-    'drink chiken water',
-    'annuy me',
-    'lofo wjf s',
-    'Uwalaka',
-];
+interface IProps {
+    isDarkMode: boolean,
+}
 
-const RandomQuestionGenerator: React.FC = () => {
-  const [randomQuestion, setRandomQuestion] = useState('');
+const RandomQuestionGenerator = ({ isDarkMode }: IProps) => {
+    const [randomQuestion, setRandomQuestion] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
-  const generateRandomQuestion = () => {
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    const selectedQuestion = questions[randomIndex];
-    setRandomQuestion(selectedQuestion);
-  };
+    const generateRandomQuestion = () => {
+        setIsLoading(true);
+        setRandomQuestion('');
+    
+        setTimeout(() => {
+          const randomIndex = Math.floor(Math.random() * questions.length);
+          const selectedQuestion = questions[randomIndex];
+          setRandomQuestion(selectedQuestion);
+          setIsLoading(false);
+        }, 2000);
+      };
 
-  return (
-    <div>
-      <h1>Question Challenge</h1>
-      <button onClick={generateRandomQuestion}>Generate</button>
-      {randomQuestion && <p>{randomQuestion}</p>}
-    </div>
-  );
+    return (
+        <div className='flex items-center w-full justify-center sm:mt-[200px] mt-[120px]'>
+            <div className='w-full'>
+                <div className='flex items-center justify-center'>
+                    <button
+                        className='bg-[#606564] text-white rounded px-8 py-2 mb-3'
+                        onClick={generateRandomQuestion}>
+                        {isLoading ? 'Loading...' : 'Generate Test'}
+                    </button>
+                </div>
+
+                <div 
+                 
+                className={`w-full sm:max-w-[500px] max-w-[350px] min-h-[120px] mx-auto rounded px-3 py-2 border question-box ${isDarkMode ? 'question-box-dark' : 'question-box-light'}`}>
+                    {randomQuestion && <p>{randomQuestion}</p>}
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default RandomQuestionGenerator;
