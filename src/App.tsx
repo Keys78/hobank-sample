@@ -3,7 +3,6 @@ import RandomQuestionGenerator from './components/Randomize'
 
 
 function App() {
-
   const [isDarkMode, setIsDarkMode] = useState(
     () => {
       const storedDarkMode = localStorage.getItem('darkMode');
@@ -43,8 +42,7 @@ function App() {
         </div>
       </div>
       <section className='sm:px-[80px] px-[16px] w-full'>
-
-        <RandomQuestionGenerator isDarkMode={isDarkMode}/>
+        <RandomQuestionGenerator isDarkMode={isDarkMode} />
       </section>
     </main>
   )

@@ -1,26 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
 .dark-mode { background: #000 ; color: #fff;}
 .light-mode { background: #ffffff ; color: #000000;}
-
 .question-box-light { box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
 .question-box-dark {  border: 1px solid #5c5c5c; }
 .border-btm { border-bottom: 1px solid #1d1d1d;}
-
-.slide-up {
-    animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1);
-  }
-  
-  @keyframes slide-up {
-    0% {
-      transform: translateY(30px);
-      opacity: 0.3;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
+.slide-up { animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1);}
+@keyframes slide-up {  0% { transform: translateY(30px); opacity: 0.3;}100% { transform: translateY(0); opacity: 1; }}
