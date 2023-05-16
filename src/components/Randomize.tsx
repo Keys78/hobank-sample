@@ -18,22 +18,21 @@ const RandomQuestionGenerator = ({ isDarkMode }: IProps) => {
           const selectedQuestion = questions[randomIndex];
           setRandomQuestion(selectedQuestion);
           setIsLoading(false);
-        }, 2000);
+        }, 1000);
       };
 
     return (
-        <div className='flex items-center w-full justify-center sm:mt-[200px] mt-[120px]'>
+        <div className='flex items-center w-full justify-center sm:mt-[200px] mt-[150px]'>
             <div className='w-full'>
                 <div className='flex items-center justify-center'>
                     <button
-                        className='bg-[#606564] text-white rounded px-8 py-2 mb-3'
+                        className='bg-[#606564] text-white rounded flex items-center justify-center h-[40px] w-[150px] mb-3'
                         onClick={generateRandomQuestion}>
-                        {isLoading ? 'Loading...' : 'Generate Test'}
+                        {isLoading ? <img className='w-[20px] h-[20px]' src="/assets/loading_gif2.gif" /> : 'Generate Test'}
                     </button>
                 </div>
 
                 <div 
-                 
                 className={`w-full sm:max-w-[500px] max-w-[350px] min-h-[120px] mx-auto rounded px-3 py-2 border question-box ${isDarkMode ? 'question-box-dark' : 'question-box-light'}`}>
                     {randomQuestion && <p>{randomQuestion}</p>}
                 </div>
