@@ -33,8 +33,8 @@ const RandomQuestionGenerator = ({ isDarkMode }: IProps) => {
                 </div>
 
                 <div 
-                className={`w-full sm:max-w-[500px] max-w-[350px] min-h-[120px] mx-auto rounded px-3 py-2 border question-box ${isDarkMode ? 'question-box-dark' : 'question-box-light'}`}>
-                    {randomQuestion && <p>{randomQuestion}</p>}
+                className={`w-full sm:max-w-[500px] max-w-[350px] min-h-[120px] mx-auto rounded px-4 py-3 border question-box ${isDarkMode ? 'question-box-dark' : 'question-box-light'}`}>
+                    {randomQuestion && <p className='slide-up'>{randomQuestion}</p>}
                 </div>
             </div>
         </div>
