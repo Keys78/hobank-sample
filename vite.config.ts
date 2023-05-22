@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       // strategies: 'injectManifest',
-      includeAssets: ['bulb.png', 'robots.txt', 'sw.js'], // Ensure 'sw.js' is included here
+      includeAssets: ['favico.ico', 'robots.txt', 'sw.js'], // Ensure 'sw.js' is included here
       registerType: 'autoUpdate',
       manifest: <any>{
         fileName: 'manifest.json',
