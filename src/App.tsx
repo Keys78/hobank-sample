@@ -22,6 +22,7 @@ function App() {
     }
   }, [isDarkMode]);
 
+  
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode: any) => !prevMode);
