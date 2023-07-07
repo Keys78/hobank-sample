@@ -28,7 +28,7 @@ const RandomQuestionGenerator = ({ isDarkMode }: IProps) => {
                     <button
                         className='bg-[#606564] text-white rounded flex items-center justify-center h-[40px] w-[150px] mb-3'
                         onClick={generateRandomQuestion}>
-                        {isLoading ? <img className='w-[20px] h-[20px]' src="/assets/loading_gif2.gif" /> : 'Generate Test'}
+                        {isLoading ? <img className='w-[20px] h-[20px]' src="/assets/loading_gif2.gif" alt='loading gif' /> : 'Generate Test'}
                     </button>
                 </div>
 
