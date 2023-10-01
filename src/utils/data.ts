@@ -112,4 +112,5 @@ export const questions: string[] = [
     "Write a JavaScript function to check if a given string is a valid credit card number.",
     "Write a JavaScript function to find the difference between two dates in days.",
     "Write a JavaScript function to capitalize the first letter of each word in a sentence.",
+    "Write a JavaScript function to differentiate between asynchronous and synchronous functions?",
 ]
